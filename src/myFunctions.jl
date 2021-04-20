@@ -1,6 +1,5 @@
 function getBarEquations(bf::BarFramework)
     # OUTPUT: should produce the squared edge length equations
-    # xvarz = [HomotopyContinuation.Variable(:x, i) for i in bf.vertices]
     eqnz = [bar_equation(bf, edge) for edge in bf.edges]
     return eqnz
 end
