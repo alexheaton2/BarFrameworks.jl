@@ -1,6 +1,6 @@
-using MyExample
+using BarFrameworks
 using Test
 
-@testset "MyExample.jl" begin
+@testset "BarFrameworks.jl" begin
     # Write your tests here.
 end
