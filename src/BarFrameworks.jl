@@ -1,6 +1,10 @@
 module BarFrameworks
 
 # Write your package code here.
-include("create_equations.jl")
+
+using HomotopyContinuation
+
+include("myStructs.jl")
+include("myFunctions.jl")
 
 end
