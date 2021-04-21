@@ -56,5 +56,11 @@ end
 
 function watch(result::RealizationsResult)
     bf = result.barframework
+    n,d = length(bf.vertices), bf.dimension
     realsols = result.realsolutions
+    mats = [tomatrix(bf, realsol) for realsol in realsols] # n by d matrices
+
+    # for plotting limits, to use later
+    minlims = [minimum(minimum(mat[i,k] for i in 1:n) for mat in mats) for k in 1:d]
+    maxlims = [maximum(maximum(mat[i,k] for i in 1:n) for mat in mats) for k in 1:d]
 end

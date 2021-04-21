@@ -24,3 +24,14 @@ realizationsresult = BarFrameworks.realizations(bf)
 realsol = realizationsresult.realsolutions[1]
 
 mat = BarFrameworks.tomatrix(bf, realsol)
+
+mats = [BarFrameworks.tomatrix(bf, realsol) for realsol in realizationsresult.realsolutions]
+
+import LinearAlgebra
+LinearAlgebra.norm(mat[3,:])
+
+minimum(mat[i,1] for i in 1:4)
+maximum(mat[i,1] for i in 1:4)
+
+minimum(minimum(mat[i,1] for i in 1:4) for mat in mats)
+maximum(maximum(mat[i,1] for i in 1:4) for mat in mats)
