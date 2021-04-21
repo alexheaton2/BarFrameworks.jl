@@ -11,6 +11,7 @@ struct BarFramework
 end
 
 struct RealizationsResult
+    barframework::BarFramework
     HCSystem::HomotopyContinuation.System
     HCResult::HomotopyContinuation.Result
     realsolutions::Vector{Array{Float64,1}}

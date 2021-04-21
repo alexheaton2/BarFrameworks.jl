@@ -20,3 +20,7 @@ eqnz = BarFrameworks.getBarEquations(bf)
 # realsols = real_solutions(result)
 
 realizationsresult = BarFrameworks.realizations(bf)
+
+realsol = realizationsresult.realsolutions[1]
+
+mat = BarFrameworks.tomatrix(bf, realsol)

@@ -34,6 +34,27 @@ function realizations(bf::BarFramework)
     HCSystem = getSystem(bf)
     HCResult = solve(HCSystem)
     realsols = real_solutions(HCResult)
-    result = RealizationsResult(HCSystem,HCResult,realsols)
+    result = RealizationsResult(bf,HCSystem,HCResult,realsols)
     return result
+end
+
+function tomatrix(bf::BarFramework, realsol)
+    d = bf.dimension
+    n = length(bf.vertices)
+    mat = zeros(Float64,n,d)
+    count = 1
+    for i in 2:n
+        for k in 1:d
+            if i > k
+                mat[i,k] = realsol[count]
+                count += 1
+            end
+        end
+    end
+    return mat
+end
+
+function watch(result::RealizationsResult)
+    bf = result.barframework
+    realsols = result.realsolutions
 end
